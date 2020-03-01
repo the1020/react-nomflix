@@ -1,8 +1,9 @@
 import React from "react";
+import Styles from "./Header.module.css";
 
 export default () => (
   <header>
-    <ul>
+    <ul className={Styles.navList}>
       <li>
         <a href="/">Movie</a>
       </li>
