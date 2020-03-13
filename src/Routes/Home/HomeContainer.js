@@ -1,5 +1,6 @@
 import React from "react";
 import HomePresenter from "./HomePresenter";
+import { moviesApi } from "../../api";
 
 export default class extends React.Component {
   state = {
@@ -9,6 +10,25 @@ export default class extends React.Component {
     error: null,
     loading: true
   };
+
+  async componentDidMount() {
+    try {
+      const {
+        data: { results: nowPlaying }
+      } = await moviesApi.nowPlaying();
+      const {
+        data: { results: upcoming }
+      } = await moviesApi.upcoming();
+      const {
+        data: { results: popular }
+      } = await moviesApi.popular();
+    } catch {
+      this.setState({ error: "Error Message" });
+    } finally {
+      this.setState({ loading: false });
+    }
+  }
+
   render() {
     const { nowPlaying, upcoming, popular, error, loading } = this.state;
     return (
