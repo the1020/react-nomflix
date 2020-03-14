@@ -20,7 +20,7 @@ export const moviesApi = {
     }),
   search: term =>
     api.get("search/movie", {
-      param: {
+      params: {
         query: encodeURIComponent(term)
       }
     })
@@ -38,7 +38,7 @@ export const tvApi = {
     }),
   search: term =>
     api.get("search/tv", {
-      param: {
+      params: {
         query: encodeURIComponent(term)
       }
     })
