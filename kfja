@@ -1,0 +1,107 @@
+[33mcommit c21356b2ab85699066ede9b9a34686ccfb5bd16b[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: yeeun <yenn2322@gmail.com>
+Date:   Sun Mar 15 18:10:10 2020 +0900
+
+    #6.0 Presenter Structure
+
+[33mcommit 6d00ebd46221a4a5cbaf0820226a76303adbbd74[m
+Author: yeeun <yenn2322@gmail.com>
+Date:   Sun Mar 15 17:17:51 2020 +0900
+
+    #5.7 Destructuring assignment with let
+
+[33mcommit 5e6e8023fe6b0a5c65213c6bce14c25584f6b5f4[m
+Author: yeeun <yenn2322@gmail.com>
+Date:   Sun Mar 15 17:12:34 2020 +0900
+
+    #5.6 Detail Container part Two
+
+[33mcommit 5dc95364177524bdb83b9741809f2b0e3127f1a1[m
+Author: yeeun <yenn2322@gmail.com>
+Date:   Sun Mar 15 16:04:59 2020 +0900
+
+    #5.5 Detail Container part One
+
+[33mcommit a584b3f71f90dd016c9f82757c78993c708fcabc[m
+Author: yeeun <yenn2322@gmail.com>
+Date:   Sat Mar 14 23:01:13 2020 +0900
+
+    #5.4 Search Container
+
+[33mcommit 68619381231c14244d5985713243f7e870867708[m
+Author: yeeun <yenn2322@gmail.com>
+Date:   Sat Mar 14 22:04:15 2020 +0900
+
+    #5.3 TV Container
+
+[33mcommit 95caeb1c61ee7a525e538dce1d69872dc8d712a9[m
+Author: yeeun <yenn2322@gmail.com>
+Date:   Sat Mar 14 01:09:51 2020 +0900
+
+    #5.2 Home Container
+
+[33mcommit 33dbcb55157d1d1453d0deb95eea4ce6d7502707[m
+Author: yeeun <yenn2322@gmail.com>
+Date:   Fri Mar 13 23:22:56 2020 +0900
+
+    #5.1 Container Presenter Pattern part Two
+
+[33mcommit 555396098debf2ec8c5a31f08cc66d471e2a5fd9[m
+Author: yeeun <yenn2322@gmail.com>
+Date:   Tue Mar 10 22:52:14 2020 +0900
+
+    #5.0 Container Presenter Pattern part One
+
+[33mcommit 314fd497b6337898b7049bc5037f9d41db5b1e7d[m
+Author: yeeun <yenn2322@gmail.com>
+Date:   Mon Mar 9 23:18:14 2020 +0900
+
+    #4.3 API Verbs part Two
+
+[33mcommit 68a1a5b02fd01d30778165a82bf266cb2dabb6bb[m
+Author: yeeun <yenn2322@gmail.com>
+Date:   Mon Mar 9 22:51:55 2020 +0900
+
+    #4.2 API Verbs part One
+
+[33mcommit b3f25bb1be8d65e2b85034b887b671d2e368e60e[m
+Author: yeeun <yenn2322@gmail.com>
+Date:   Mon Mar 9 22:24:32 2020 +0900
+
+    #4.1 Sexy Networking with Axios Instances
+
+[33mcommit 32c17e13ef15903f6f0aecfc8dabeadd29cef1a3[m
+Author: yeeun <yenn2322@gmail.com>
+Date:   Wed Mar 4 22:21:04 2020 +0900
+
+    #3.4 Location Aware Header
+
+[33mcommit 69fe738eb4a5f8d78eb4487f4891102471a0c168[m
+Author: yeeun <yenn2322@gmail.com>
+Date:   Sun Mar 1 23:16:56 2020 +0900
+
+    #3.3 GlobalStyles and Header
+
+[33mcommit a347694e4a6104364c2a43eb8ffaf00aae273089[m
+Author: yeeun <yenn2322@gmail.com>
+Date:   Sun Mar 1 21:59:14 2020 +0900
+
+    #3.2 CSS in React part Three
+
+[33mcommit be1dafb3ec8f02c6874ff0b6120446ba2e3888e0[m
+Author: yeeun <yenn2322@gmail.com>
+Date:   Sun Mar 1 18:12:09 2020 +0900
+
+    #3.1 CSS in React part Two
+
+[33mcommit be2f048fda6395f3f6b71a5e9ca0a53d7acf30d9[m
+Author: yeeun <yenn2322@gmail.com>
+Date:   Sun Mar 1 17:41:19 2020 +0900
+
+    #2.2 React Router
+
+[33mcommit b328d6740e049d5a1ea38f16cf8427030a607a08[m
+Author: yeeun <yenn2322@gmail.com>
+Date:   Sun Mar 1 17:13:05 2020 +0900
+
+    Project Setup
