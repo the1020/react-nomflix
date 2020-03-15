@@ -1,26 +1,46 @@
 import React from "react";
 import DetailPresenter from "./DetailPresenter";
+import { moviesApi, tvApi } from "../../api";
 
 export default class extends React.Component {
-  state = {
-    result: null,
-    error: null,
-    loading: true
-  };
+  constructor(props) {
+    super(props);
+    const {
+      location: { pathname }
+    } = props;
+    this.state = {
+      result: null,
+      error: null,
+      loading: true,
+      isMovie: pathname.includes("/movie/")
+    };
+  }
 
   async componentDidMount() {
     const {
       match: {
         params: { id }
       },
-      history: { push }
+      history: { push },
+      location: { pathname }
     } = this.props;
     const parsedId = parseInt(id);
     if (isNaN(parsedId)) {
       push("/");
       return;
     }
-    console.log(this.props);
+
+    const { isMovie } = this.state;
+    let result;
+    if (isMovie) {
+      const request = await moviesApi.movieDetail(parsedId);
+      result = request.data;
+    } else {
+      const request = await tvApi.showDetail(parsedId);
+      result = request.data;
+    }
+
+    console.log(result);
   }
 
   render() {
