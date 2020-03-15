@@ -5,7 +5,7 @@ import { tvApi } from "api";
 export default class extends React.Component {
   state = {
     topRated: null,
-    popluar: null,
+    popular: null,
     airingToday: null,
     error: null,
     loading: true
@@ -17,13 +17,13 @@ export default class extends React.Component {
         data: { results: topRated }
       } = await tvApi.topRated();
       const {
-        data: { results: popluar }
-      } = await tvApi.popluar();
+        data: { results: popular }
+      } = await tvApi.popular();
       const {
         data: { results: airingToday }
       } = await tvApi.airingToday();
 
-      this.setState({ topRated, popluar, airingToday });
+      this.setState({ topRated, popular, airingToday });
     } catch {
       this.setState({ error: "Error Message" });
     } finally {
@@ -32,11 +32,12 @@ export default class extends React.Component {
   }
 
   render() {
-    const { topRated, popluar, airingToday, error, loading } = this.state;
+    console.log(this.state);
+    const { topRated, popular, airingToday, error, loading } = this.state;
     return (
       <TVPresenter
         topRated={topRated}
-        popluar={popluar}
+        popular={popular}
         airingToday={airingToday}
         error={error}
         loading={loading}
