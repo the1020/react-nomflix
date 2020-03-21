@@ -22,6 +22,8 @@ export default class extends React.Component {
       const {
         data: { results: airingToday }
       } = await tvApi.airingToday();
+
+      console.log(topRated);
       this.setState({ topRated, popular, airingToday });
     } catch {
       this.setState({ error: "Error Message" });

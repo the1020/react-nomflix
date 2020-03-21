@@ -37,8 +37,8 @@ export default class extends React.Component {
     } else {
       ({ data: result } = await tvApi.showDetail(parsedId));
     }
-
     console.log(result);
+    this.setState({ result, loading: false });
   }
 
   render() {

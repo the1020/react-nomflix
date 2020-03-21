@@ -14,9 +14,16 @@ const ImageContainer = styled.div`
 
 const Image = styled.img`
   width: 100%;
+  height: 180px;
   &:hover {
-    filter: brightness(65%);
+    filter: brightness(60%);
+    transition: opacity 0.3s linear;
   }
+`;
+
+const NoImage = styled.div`
+  width: 125px;
+  height: 187px;
 `;
 
 const Rating = styled.div`
@@ -39,15 +46,19 @@ const Year = styled.span`
 `;
 
 const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
-  <Link to={isMovie ? `/movie/${id}` : `/show/${id}`}>
+  <Link key={id} to={isMovie ? `/movie/${id}` : `/show/${id}`}>
     <Container>
       <ImageContainer>
-        <Image
-          src={"https://image.tmdb.org/t/p/w185_and_h278_bestv2/" + imageUrl}
-        ></Image>
+        {imageUrl === null ? (
+          <NoImage src="" />
+        ) : (
+          <Image src={"https://image.tmdb.org/t/p/w500/" + imageUrl}></Image>
+        )}
         <Rating>{rating}/10</Rating>
       </ImageContainer>
-      <Title>{title}</Title>
+      <Title>
+        {title.length > 10 ? `${title.substring(0, 15)}...` : title}
+      </Title>
       <Year>{year}</Year>
     </Container>
   </Link>

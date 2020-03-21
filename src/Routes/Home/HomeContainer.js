@@ -22,7 +22,6 @@ export default class extends React.Component {
       const {
         data: { results: popular }
       } = await moviesApi.popular();
-      console.log(nowPlaying);
       this.setState({ nowPlaying, upcoming, popular });
     } catch {
       this.setState({ error: "Error Message" });

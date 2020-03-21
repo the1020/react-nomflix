@@ -21,9 +21,10 @@ const HomePresenter = ({ nowPlaying, upcoming, popular, error, loading }) =>
             <Poster
               id={movie.id}
               title={movie.title}
-              year={movie.release_date}
+              year={movie.release_date && movie.release_date.substring(0, 4)}
               rating={movie.vote_average}
               imageUrl={movie.poster_path}
+              isMovie={true}
             ></Poster>
           ))}
         </Section>
@@ -32,11 +33,13 @@ const HomePresenter = ({ nowPlaying, upcoming, popular, error, loading }) =>
         <Section title="Upcoming Movies">
           {upcoming.map(movie => (
             <Poster
+              key={movie.id}
               id={movie.id}
               title={movie.title}
-              year={movie.release_date}
+              year={movie.release_date && movie.release_date.substring(0, 4)}
               rating={movie.vote_average}
               imageUrl={movie.poster_path}
+              isMovie={true}
             ></Poster>
           ))}
         </Section>
@@ -47,9 +50,10 @@ const HomePresenter = ({ nowPlaying, upcoming, popular, error, loading }) =>
             <Poster
               id={movie.id}
               title={movie.title}
-              year={movie.release_date}
+              year={movie.release_date && movie.release_date.substring(0, 4)}
               rating={movie.vote_average}
               imageUrl={movie.poster_path}
+              isMovie={true}
             ></Poster>
           ))}
         </Section>
