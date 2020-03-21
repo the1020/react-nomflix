@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Section from "../../Components/Section";
 import Loader from "../../Components/Loader";
+import Message from "../../Components/Message";
 
 const Container = styled.div`
   padding: 0px 20px;
@@ -53,6 +54,13 @@ const SearchPresenter = ({
           ))}
         </Section>
       )}
+      {error && <Message text={error} color="#eb4034"></Message>}
+      {movieResults &&
+        movieResults.length === 0 &&
+        tvResults &&
+        tvResults.length === 0 && (
+          <Message text="Not Found" color="#d1d1d1"></Message>
+        )}
     </Container>
   );
 

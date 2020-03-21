@@ -13,7 +13,6 @@ export default class extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    debugger;
     const { searchTerm } = this.state;
     if (searchTerm !== "") {
       this.searchTerm();
