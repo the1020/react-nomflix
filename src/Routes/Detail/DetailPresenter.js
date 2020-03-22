@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Loader from "../../Components/Loader";
+import Helmet from "react-helmet";
 
 const Container = styled.div`
   height: calc(100vh - 50px);
@@ -84,6 +85,9 @@ const DetailPresenter = ({ result, error, loading }) =>
     <Loader />
   ) : (
     <Container>
+      <Helmet>
+        <title>{result.title ? result.title : result.name}</title>
+      </Helmet>
       <Backdrop
         bgImage={`https://image.tmdb.org/t/p/original/${result.backdrop_path}`}
       ></Backdrop>
@@ -117,7 +121,7 @@ const DetailPresenter = ({ result, error, loading }) =>
             <Divider>•</Divider>
             <Item>{result.status}</Item>
             <Divider>•</Divider>
-            <Item>{result.vote_average && `${result.vote_average}/10`}</Item>
+            <Item>{result.vote_average && `⭐ ${result.vote_average}/10`}</Item>
             <Overview>{result.overview}</Overview>
           </ItemContainer>
           <ItemContainer>
