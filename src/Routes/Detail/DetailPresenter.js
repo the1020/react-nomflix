@@ -48,23 +48,35 @@ const Data = styled.div`
 `;
 
 const Title = styled.span`
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 400;
+`;
+
+const Divider = styled.span`
+  margin: 0 10px;
 `;
 
 const ItemContainer = styled.div`
   margin-top: 20px;
 `;
 
-const Item = styled.span`
-  padding-right: 10px;
-`;
+const Item = styled.span``;
 
 const Overview = styled.p`
   margin-top: 20px;
   width: 60%;
-  font-size: 13px;
-  line-height: 25px;
+  font-size: 11px;
+  opacity: 0.8;
+  line-height: 22px;
+`;
+
+const VideoList = styled.ul`
+  list-style-type: require("youtubeicon.png");
+`;
+
+const VideoItem = styled.li`
+  margin-bottom: 10px;
+  opacity: 0.8;
 `;
 
 const DetailPresenter = ({ result, error, loading }) =>
@@ -80,19 +92,47 @@ const DetailPresenter = ({ result, error, loading }) =>
           bgImage={`https://image.tmdb.org/t/p/original${result.poster_path}`}
         ></Cover>
         <Data>
-          <Title>{result.title}</Title>
+          <Title>{result.title ? result.title : result.name}</Title>
           <ItemContainer>
             <Item>
-              {result.release_date && result.release_date.substring(0, 4)}
+              {result.release_date
+                ? result.release_date.substring(0, 4)
+                : result.first_air_date.substring(0, 4)}
             </Item>
-            <Item>{result.runtime && `${result.runtime} min`}</Item>
+            <Divider>•</Divider>
+            <Item>
+              {result.runtime
+                ? `${result.runtime} min`
+                : `${result.episode_run_time} min`}
+            </Item>
+            <Divider>•</Divider>
             <Item>
               {result.genres &&
-                result.genres.map(genres => ` ${genres.name} /`)}
+                result.genres.map((genres, index) =>
+                  index === result.genres.length - 1
+                    ? genres.name
+                    : ` ${genres.name} /`
+                )}
             </Item>
+            <Divider>•</Divider>
             <Item>{result.status}</Item>
+            <Divider>•</Divider>
             <Item>{result.vote_average && `${result.vote_average}/10`}</Item>
             <Overview>{result.overview}</Overview>
+          </ItemContainer>
+          <ItemContainer>
+            <VideoList>
+              {result.videos.results.map(video => (
+                <VideoItem key={video.id}>
+                  <a
+                    href={`https://www.youtube.com/watch?v=${video.key}`}
+                    target="_blank"
+                  >
+                    {video.name}
+                  </a>
+                </VideoItem>
+              ))}
+            </VideoList>
           </ItemContainer>
         </Data>
       </Content>
